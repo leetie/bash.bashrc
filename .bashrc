@@ -120,5 +120,10 @@ eval "$(rbenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export EDITOR=vim
+
+# ez pz connect sambashare
+# usage: connect FOLDER
+function connect() {
+    cd -- "/run/user/1000/gvfs/smb-share:server=$1.local,share=$1/"
+}
